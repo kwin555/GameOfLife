@@ -1,0 +1,45 @@
+Assign1: Due 11:59PM September 20
+
+***Your chance of success greatly increases if you start very early. Your chance of failure increases if you start late.
+
+Using Test First Development (no code without test first) implement the problem you designed in hw2. Feel free to evolve that design and use your judgment to make changes based on the improved understanding and learning.
+
+Take small steps, ask for frequent reviews.
+
+First start with a tests list (check in a tests.txt file) and a canary test. Implement at most two other tests, in addition to the canary test, and minimum code to make those tests to pass. This is a great first step to complete and ask for a review.
+
+After completing the assignment (and only after) answer the following questions:
+
+1. What did you learn mainly in this assignment?
+
+Kevin: I learned how to create scripts and how to code with TDD. I learned how to create things small then grow them with time. I saw some things that Venkat did with my code. How he removed all of my for loops and used maps instead.
+
+Jeniza: The main thing I learned was making use of the functions Java has to offer. I'd never used stream(), map(), collect(), filter(), etc. I found stream the most useful when working with the lists. I also learned the usefulness of listing what tests you want to use on the function you're going to create rather than testing my entire code manually. I also learned how to use Swing because, let's be honest, I didn't learn how to use it in 1430. So, thank you for that!
+
+
+
+2. How is your current design different, if at all, from the strategic design created in hw2?
+
+    Our current design does not have much in common with the design we created in hw2. Originally, we wanted to use a 2D Boolean array to hold the cells which would have limited our world because not every cell would have eight neighbors. The edges of the array would have caused limitations, but now we can simply hold a list of live points in the world and each point can have it's eight neighbors checked without being limited by the bounds of an array (i.e. we could not have negative values before). 
+
+    We did not have a class for the Grid or the class GameState which we originally planned to use to keep count of the turns. Instead, we used a timer to iterate the turns which repainted the the grid. Originally, we thought GameState would handle the need for grid expansion, but instead this is handled in the GUI itself. We did make a separate class for the GUI, but I believe that is the only part of our original design that stayed. 
+
+
+
+3. Were there any surprises or things you did not expect along the way? 
+Any particular problem faced, things you had to tackle that you did not expect beforehand?
+
+Jeniza: My biggest surprise was not implementing the grid in the main. I thought that storing all the data in an array was the most efficient way, but it turned out not to be. I was also surprised at how useful the functions were. I've never build my programs out of mainly functions before. It was also surprising how fun the project was. At first, unlearning all the things I've become accustomed to doing was frustrating, but in the end, I learned more about how to program and especially how to test my program -- which I'd never done before. 
+
+
+Kevin: I did not expect the project to be this cool. At first I thought I was making random functions, but then as time went on the program got more fleshed out.
+
+Total [100]: 100
+Build runs the tests without errors [10]:
+Program produces reasonably desired results when run [10]:
+All tests pass [20]:
+Code Coverage [10]:
+Test quality [10]:
+Design quality [20]:
+Code quality [10]:
+Answers to questions in assign1.txt [10]:

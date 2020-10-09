@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="game.GameOfLifeTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2019-09-19T22:28:06" hostname="Kevin-MacBook-Pro.T-mobile.com" time="0.097">
+  <properties/>
+  <testcase name="positions11_12_30_ReturnsListWith21()" classname="game.GameOfLifeTest" time="0.032"/>
+  <testcase name="aBlockReturnTheSameBlock()" classname="game.GameOfLifeTest" time="0.007"/>
+  <testcase name="aLiveCellAtPosition3_3ShouldGenerateEightSignals()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="oneCellShouldReturn8Positions()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="aLiveCellAtPosition2_4ShouldGenerateEightSignals()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="aLiveCellWith_LiveNeighborsLives()" classname="game.GameOfLifeTest" time="0.005"/>
+  <testcase name="onePointsReturnsTwoPointsThatAreTheSame()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="twoCellsShouldReturn16Positions()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="onePositionsReturnsMapWithPositionCountOne()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="zeroCellsShouldReturn0Positions()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="horizontalBlinkerReturnVerticalBlinker()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="verticalBlinkerReturnHorizontalBlinker()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="aDeadCellWith_LiveNeighborsStaysDead()" classname="game.GameOfLifeTest" time="0.002"/>
+  <testcase name="threePointsReturnsTopLeftFirstBottomRightSecond()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="aLiveCellWith_LiveNeighborsDies()" classname="game.GameOfLifeTest" time="0.002"/>
+  <testcase name="twoPositionsReturnsAnEmptyList()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="threeCellsShouldReturn24Positions()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="aDeadCellWithThreeLiveNeighborsComesToLife()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="threePositionsReturnsMapWithPositionCountsOneAndTwo()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="onePositionsReturnsAnEmptyList()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="positions11_12_22_ReturnsListWith11_12_21_22()" classname="game.GameOfLifeTest" time="0.004"/>
+  <testcase name="checkBoundsAreCorrect()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="zeroPositionsReturnsEmptyMap()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="noPositionsReturnsAnEmptyList()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="anEmptyListReturnsAnEmptyList()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="gliderIteratesOneCorrectStep()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="twoPointsReturnsTopLeftFirstBottomRightSecond()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="aBeehiveReturnTheSameBeehive()" classname="game.GameOfLifeTest" time="0.001"/>
+  <testcase name="fourPointsReturnsTopLeftFirstBottomRightSecond()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="twoPositionsReturnsMapWithPositionCountTwo()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="aLiveCellAtPosition0_0ShouldGenerateEightSignals()" classname="game.GameOfLifeTest" time="0.0"/>
+  <testcase name="Canary()" classname="game.GameOfLifeTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

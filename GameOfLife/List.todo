@@ -1,0 +1,6 @@
+-a dead cell with zero neighbors stays dead
+-a dead cell with one neighbors stays dead
+-a dead cell with two neighbors stays dead
+-a dead cell with three neighbors stays dead
+-a dead cell with five neighbors stays dead
+-a dead cell with eight neighbors stays dead

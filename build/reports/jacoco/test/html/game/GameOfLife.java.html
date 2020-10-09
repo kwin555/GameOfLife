@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GameOfLife.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">assign1</a> &gt; <a href="index.source.html" class="el_package">game</a> &gt; <span class="el_source">GameOfLife.java</span></div><h1>GameOfLife.java</h1><pre class="source lang-java linenums">package game;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+
+import static java.util.stream.Collectors.*;
+
+public interface GameOfLife {
+<span class="fc" id="L12">  public enum CellState { DEAD, ALIVE, NONE };</span>
+
+  public static CellState computeNextState(CellState currentState, long numberOfLiveNeighbors) {
+<span class="fc bfc" id="L15" title="All 6 branches covered.">    return currentState == CellState.ALIVE &amp;&amp; numberOfLiveNeighbors == 2 ||</span>
+<span class="fc" id="L16">      numberOfLiveNeighbors == 3 ? CellState.ALIVE : CellState.DEAD;</span>
+  }
+
+  public static List&lt;Point&gt; generateSignalsForPosition(Point cell) {
+<span class="fc" id="L20">    int x = cell.x;</span>
+<span class="fc" id="L21">    int y = cell.y;</span>
+<span class="fc" id="L22">    List&lt;Point&gt; positions = new ArrayList&lt;&gt;();</span>
+
+<span class="fc bfc" id="L24" title="All 2 branches covered.">    for (int i = x - 1; i &lt;= x + 1; i++) {</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">      for (int j = y - 1; j &lt;= y + 1; j++) {</span>
+<span class="fc bfc" id="L26" title="All 4 branches covered.">        if (i == x &amp;&amp; j == y) continue;</span>
+
+<span class="fc" id="L28">        positions.add(new Point(i, j));</span>
+      }
+    }
+
+<span class="fc" id="L32">    return positions;</span>
+  }
+
+  public static List&lt;Point&gt; generateSignalsForPositions(List&lt;Point&gt; cells) {
+<span class="fc" id="L36">    return cells.stream()</span>
+<span class="fc" id="L37">      .flatMap(cell -&gt; generateSignalsForPosition(cell).stream())</span>
+<span class="fc" id="L38">      .collect(toList());</span>
+  }
+
+  public static Map&lt;Point, Long&gt; countSignals(List&lt;Point&gt; cells) {
+<span class="fc" id="L42">    return cells.stream()</span>
+<span class="fc" id="L43">      .collect(groupingBy(Function.identity(), counting()));</span>
+  }
+
+  public static List&lt;Point&gt; nextGeneration(List&lt;Point&gt; cells) {
+<span class="fc" id="L47">    Map&lt;Point, Long&gt; signalsCount = countSignals(generateSignalsForPositions(cells));</span>
+
+<span class="fc" id="L49">    return signalsCount.keySet()</span>
+<span class="fc" id="L50">      .stream()</span>
+<span class="fc bfc" id="L51" title="All 4 branches covered.">      .filter(cell -&gt; computeNextState(cells.contains(cell) ? CellState.ALIVE : CellState.DEAD, signalsCount.get(cell)) == CellState.ALIVE)</span>
+<span class="fc" id="L52">      .collect(toList());</span>
+  }
+
+  public static List&lt;Point&gt; getBounds(List&lt;Point&gt; cells) {
+<span class="fc bfc" id="L56" title="All 2 branches covered.">    if (cells.isEmpty()) return List.of();</span>
+
+<span class="fc" id="L58">    Point leftBound = new Point(Integer.MAX_VALUE, Integer.MAX_VALUE);</span>
+<span class="fc" id="L59">    Point rightBound = new Point(Integer.MIN_VALUE, Integer.MIN_VALUE);</span>
+
+<span class="fc bfc" id="L61" title="All 2 branches covered.">    for(Point cell : cells) {</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">      if(cell.x &lt; leftBound.x) leftBound.x = cell.x;</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">      if(cell.y &lt; leftBound.y) leftBound.y = cell.y;</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">      if(cell.x &gt; rightBound.x) rightBound.x = cell.x;</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">      if(cell.y &gt; rightBound.y) rightBound.y = cell.y;</span>
+<span class="fc" id="L66">    }</span>
+
+<span class="fc" id="L68">    return List.of(leftBound, rightBound);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
